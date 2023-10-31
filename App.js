@@ -1,15 +1,14 @@
-import { StatusBar, ScrollView, Text, View } from 'react-native';
+import { StatusBar, ScrollView, Text, View, SafeAreaView } from 'react-native';
 import HomePage from './src/pages/homePage';
 
 export default function App() {
   return (
-      <ScrollView style={{flex: 1}}>
-        <View>
-          <StatusBar />
-          <Text>Hello world!!!</Text>
+      <SafeAreaView style={{flex: 1}}>
+        <ScrollView contentContainerStyle={{flex:0}}>
+        <StatusBar />
           <HomePage />
-        </View>
       </ScrollView>
+      </SafeAreaView>
   );
 }
 
