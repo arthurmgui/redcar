@@ -1,13 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import HomePage from './src/pages/homePage';
 
 export default function App() {
   return (
     <ScrollView style={{flex: 1}}>
-    <View style={styles.container}>
-      <Text>Hello world!!!</Text>
-      <StatusBar style="auto" />
-    </View>
+      <View style={styles.container}>
+        <Text>Hello world!!!</Text>
+        <HomePage />
+        <StatusBar style="auto" />
+      </View>
     </ScrollView>
   );
 }
