@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, View, Image, Dimensions, StyleSheet, ScrollView, SafeAreaView, TextInput, Alert, Button} from "react-native";
-import redcar from '../../assets/redcar_tela_2.jpg';
+import redcar from '../../../assets/redcar_tela_2.jpg';
 
 const width = Dimensions.get('screen').width;
 

@@ -1,5 +1,5 @@
 import { StatusBar, ScrollView, Text, View, SafeAreaView } from 'react-native';
-import HomePage from './src/pages/homePage';
+import HomePage from './src/pages/homePage/homePage';
 
 export default function App() {
   return (
