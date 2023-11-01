@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, Image, Dimensions, StyleSheet, ScrollView, SafeAreaView, TextInput, Alert, Button} from "react-native";
+import { Text, View, Image, Dimensions, StyleSheet, ScrollView, SafeAreaView, TextInput, Alert, Button, KeyboardAvoidingView} from "react-native";
 import redcar from '../../../assets/redcar_tela_2.jpg';
 
 const width = Dimensions.get('screen').width;
@@ -14,67 +14,68 @@ export default function HomePage() {
     const [carLicensePlate, onChangeCarLicensePlate] = React.useState('');
     const [inputClientSearch, onChangeInputClientSearch] = React.useState('');
 
-    return  <SafeAreaView>
-                <ScrollView>
-                        <Image source={redcar} style={styleRedCar.topo} />
-                        <View style={styleRedCar.appBar}>
-                            <Text style={styleRedCar.title}>RedCar</Text>
-                            <TextInput
-                                style={styleRedCar.inputSearch}
-                                onChangeText={onChangeInputClientSearch}
-                                value={inputClientSearch}
-                                placeholder="Pesquise o Cliente"
-                            />
-                        </View>
-
-                        <View>
-                            <Text style={styleRedCar.singupTitle}>Novo cliente</Text>
-                            <TextInput
-                                style={styleRedCar.input}
-                                onChangeText={onChangeClientName}
-                                value={clientName}
-                                placeholder= "Nome"
-                            />
-                            <TextInput
-                                style={styleRedCar.input}
-                                onChangeText={onChangeClientAdress}
-                                value={clientAdress}
-                                placeholder= "Endereço"
-                            />
-                            <TextInput
-                                style={styleRedCar.input}
-                                onChangeText={onChangeClientContact}
-                                value={clientContact}
-                                placeholder= "Contato"
-                                keyboardType= "number-pad"
-                            />
-                            <TextInput
-                                style={styleRedCar.input}
-                                onChangeText={onChangeClientCar}
-                                value={clientCar}
-                                placeholder= "Modelo do carro"
-                            />
-                            <TextInput
-                                style={styleRedCar.input}
-                                onChangeText={onChangeCarLicensePlate}
-                                value={carLicensePlate}
-                                placeholder= "Placa do carro"
-                            />
-                            <Button
-                                style={styleRedCar.button}
-                                onPress={()=> Alert.alert('Cliente cadastrado!')}
-                                title="Criar Cadastro"
-                                color="red"
-                            />
-                        </View>
-                </ScrollView>
+    return  (
+        <SafeAreaView>
+            <Image source={redcar} style={styleRedCar.topo} />
+            <View style={styleRedCar.appBar}>
+                <Text style={styleRedCar.title}>RedCar</Text>
+                <TextInput
+                    style={styleRedCar.inputSearch}
+                    onChangeText={onChangeInputClientSearch}
+                    value={inputClientSearch}
+                    placeholder="Pesquise o Cliente"
+                />
+            </View>
+            <ScrollView>
+                    <KeyboardAvoidingView>
+                        <Text style={styleRedCar.singupTitle}>Novo cliente</Text>
+                        <TextInput
+                            style={styleRedCar.input}
+                            onChangeText={onChangeClientName}
+                            value={clientName}
+                            placeholder= "Nome"
+                        />
+                        <TextInput
+                            style={styleRedCar.input}
+                            onChangeText={onChangeClientAdress}
+                            value={clientAdress}
+                            placeholder= "Endereço"
+                        />
+                        <TextInput
+                            style={styleRedCar.input}
+                            onChangeText={onChangeClientContact}
+                            value={clientContact}
+                            placeholder= "Contato"
+                            keyboardType= "number-pad"
+                        />
+                        <TextInput
+                            style={styleRedCar.input}
+                            onChangeText={onChangeClientCar}
+                            value={clientCar}
+                            placeholder= "Modelo do carro"
+                        />
+                        <TextInput
+                            style={styleRedCar.input}
+                            onChangeText={onChangeCarLicensePlate}
+                            value={carLicensePlate}
+                            placeholder= "Placa do carro"
+                        />
+                        <Button
+                            style={styleRedCar.button}
+                            onPress={()=> Alert.alert('Cliente cadastrado!')}
+                            title="Criar Cadastro"
+                            color="red"
+                        />
+                    </KeyboardAvoidingView>
+            </ScrollView>
             </SafeAreaView>
+    )
 }
 
 const styleRedCar = StyleSheet.create({
     topo: {
         width: "100%",
-        height: 410 / 580 * width,
+        height: 400 / 680 * width,
     },
 
     title: {
@@ -85,7 +86,7 @@ const styleRedCar = StyleSheet.create({
         color: "white",
         fontWeight: "bold",
         padding: 38,
-        textShadowColor: 'rgba(3, 3, 3, 5)', // Cor da sombra (preta com 50% de opacidade)
+        textShadowColor: "red", // Cor da sombra (preta com 50% de opacidade)
         textShadowOffset: { width: 2, height: 2 }, // Deslocamento da sombra
         textShadowRadius: 20, // Raio da sombra
     },
@@ -116,16 +117,25 @@ const styleRedCar = StyleSheet.create({
         height: 60,
         margin: 8,
         color: "white",
-        backgroundColor: 'rgba(300, 0, 0, 0.9)',
+        backgroundColor: '#8e1e1ef6',
         borderWidth: 2,
         borderColor: 'rgba(300, 0, 0, 0.8)',
         borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        borderBottomRightRadius: 20,
         borderBottomLeftRadius: 20,
         padding: 15,
+        shadowColor: "red",
+        shadowOffset: { width: 2, height: 2},
+        shadowRadius: 20,
     },
 
     appBar: {
         position: "absolute",
         width: "100%"
+    },
+
+    button: {
+        
     }
 });
