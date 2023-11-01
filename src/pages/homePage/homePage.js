@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, Image, Dimensions, StyleSheet, ScrollView, SafeAreaView, TextInput, Alert, Button, KeyboardAvoidingView} from "react-native";
+import { Text, View, Image, Dimensions, StyleSheet, ScrollView, SafeAreaView, TextInput, Alert, Button, KeyboardAvoidingView, TouchableOpacity, Pressable} from "react-native";
 import redcar from '../../../assets/redcar_tela_2.jpg';
 
 const width = Dimensions.get('screen').width;
@@ -60,12 +60,13 @@ export default function HomePage() {
                             value={carLicensePlate}
                             placeholder= "Placa do carro"
                         />
-                        <Button
-                            style={styleRedCar.button}
-                            onPress={()=> Alert.alert('Cliente cadastrado!')}
-                            title="Criar Cadastro"
-                            color="red"
-                        />
+                        <View style={styleRedCar.containerButton}>
+                            <Pressable style={styleRedCar.buttonCreate}>
+                                {({pressed}) => (
+                                    <Text style={[styleRedCar.textButtonCreate, pressed && styleRedCar.textButtonCreate]}>Cadastrar cliente</Text>
+                                )}
+                            </Pressable>
+                        </View>
                     </KeyboardAvoidingView>
             </ScrollView>
             </SafeAreaView>
@@ -135,7 +136,22 @@ const styleRedCar = StyleSheet.create({
         width: "100%"
     },
 
-    button: {
-        
+    containerButton: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+    }, 
+
+    buttonCreate: {
+        backgroundColor: "red",
+        width: "50%",
+        padding: 10,
+        borderRadius: 5,
+    },
+
+    textButtonCreate: {
+        color:"white",
+        fontSize: 16,
+        textAlign: "center"
     }
 });
