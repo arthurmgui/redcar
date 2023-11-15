@@ -1,3 +1,11 @@
-.css {
+.corFundo {
     background-color: #bd2a2a
+}
+
+.corCards {
+    background-color: #db4444;
+}
+
+.cardPressionado {
+    background-color: #f35757;
 }

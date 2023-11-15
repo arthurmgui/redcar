@@ -8,65 +8,58 @@ const width = Dimensions.get('screen').width;
 
 export default function HomePage() {
     
-    const [clientName, onChangeClientName] = React.useState('');
-    const [clientAdress, onChangeClientAdress] = React.useState('');
-    const [clientContact, onChangeClientContact] = React.useState('');
-    const [inputClientSearch, onChangeInputClientSearch] = React.useState('');
-
     return  (
-        <SafeAreaView style={styleRedCar.safeAreaStyle}>
-            <View style={styleRedCar.viewContainer}>
-                <Image source={redcar} style={styleRedCar.topo} />
-                <View style={styleRedCar.appBar}>
-                    <Text style={styleRedCar.title}>RedCar</Text>
-                </View>
-                <ScrollView>
-                    <KeyboardAvoidingView>
-                        <View>
-                            <Text style={styleRedCar.quicklyAcessTxt}>Acesso rápido</Text>
-                            <View style={styleRedCar.containerQuiclyCards}>
-                                <View style={styleRedCar.containerCards}>
-                                    <Pressable style={styleRedCar.card}>
-                                        {({pressed}) => (
-                                            <View style={styleRedCar.iconCard}>
-                                                <Icon name="user" size={20} color="white" style={styleRedCar.iconCard}/>
-                                            </View>
-                                        )}
-                                    </Pressable>
-                                    <Text style={styleRedCar.textCard}>
-                                        clientes
-                                    </Text>
-                                </View>
-                                <View style={styleRedCar.containerCards}>
-                                    <Pressable style={styleRedCar.card}>
-                                        {({pressed}) => (
-                                            <View style={styleRedCar.iconCard}>
-                                                <Icon name="car" size={20} color="white" style={styleRedCar.iconCard}/>
-                                            </View>
-                                        )}
-                                    </Pressable>
-                                    <Text style={styleRedCar.textCard}>
-                                        garagem
-                                    </Text>
-                                </View>
-                                <View style={styleRedCar.containerCards}>
-                                    <Pressable style={styleRedCar.card}>
-                                        {({pressed}) => (
-                                            <View style={styleRedCar.iconCard}>
-                                                <Icon name="money" size={20} color="white" style={styleRedCar.iconCard}/>
-                                            </View>
-                                        )}
-                                    </Pressable>
-                                    <Text style={styleRedCar.textCard}>
-                                        orçamento
-                                    </Text>
-                                </View>
+        <View style={styleRedCar.viewContainer}>
+            <Image source={redcar} style={styleRedCar.topo} />
+            <View style={styleRedCar.appBar}>
+                <Text style={styleRedCar.title}>RedCar</Text>
+            </View>
+            <ScrollView>
+                <KeyboardAvoidingView>
+                    <View>
+                        <Text style={styleRedCar.quicklyAcessTxt}>Acesso rápido</Text>
+                        <View style={styleRedCar.containerQuiclyCards}>
+                            <View style={styleRedCar.containerCards}>
+                                <Pressable style={styleRedCar.card}>
+                                    {({pressed}) => (
+                                        <View style={styleRedCar.iconCard}>
+                                            <Icon name="user" size={20} color="white" style={styleRedCar.iconCard}/>
+                                        </View>
+                                    )}
+                                </Pressable>
+                                <Text style={styleRedCar.textCard}>
+                                    clientes
+                                </Text>
+                            </View>
+                            <View style={styleRedCar.containerCards}>
+                                <Pressable style={styleRedCar.card}>
+                                    {({pressed}) => (
+                                        <View style={styleRedCar.iconCard}>
+                                            <Icon name="car" size={20} color="white" style={styleRedCar.iconCard}/>
+                                        </View>
+                                    )}
+                                </Pressable>
+                                <Text style={styleRedCar.textCard}>
+                                    garagem
+                                </Text>
+                            </View>
+                            <View style={styleRedCar.containerCards}>
+                                <Pressable style={styleRedCar.card}>
+                                    {({pressed}) => (
+                                        <View style={styleRedCar.iconCard}>
+                                            <Icon name="money" size={20} color="white" style={styleRedCar.iconCard}/>
+                                        </View>
+                                    )}
+                                </Pressable>
+                                <Text style={styleRedCar.textCard}>
+                                    orçamento
+                                </Text>
                             </View>
                         </View>
-                    </KeyboardAvoidingView>
-                </ScrollView>
-            </View>
-        </SafeAreaView>
+                    </View>
+                </KeyboardAvoidingView>
+            </ScrollView>
+        </View>
     )
 }
 
